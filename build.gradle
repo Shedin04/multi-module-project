@@ -1,34 +1,24 @@
-plugins {
-    id 'java'
-    id 'groovy'
-}
+allprojects {
+    group 'com.shedin'
+    version '1.0'
 
-group 'com.shedin'
-version '1.0-SNAPSHOT'
+    apply plugin: 'java'
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        mavenCentral()
+    }
 
-ext {
-    junitVersion = '5.8.1'
-}
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    }
 
-sourceCompatibility = '13'
-targetCompatibility = '13'
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+    test {
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
-    implementation('org.codehaus.groovy:groovy:3.0.9')
-    testImplementation('org.seleniumhq.selenium:selenium-java:3.141.59')
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-}
-
-test {
-    useJUnitPlatform()
+    implementation project(':gui-utils')
+    implementation project(':api-utils')
 }

@@ -1,0 +1,6 @@
+[submodule "gui-utils"]
+	path = gui-utils
+	url = https://github.com/Shedin04/gui-utils.git
+[submodule "api-utils"]
+	path = api-utils
+	url = https://github.com/Shedin04/api-utils.git
