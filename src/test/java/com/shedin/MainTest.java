@@ -1,5 +1,4 @@
-import com.shedin.APIUtils;
-import com.shedin.UIUtils;
+package com.shedin;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -10,7 +9,9 @@ public class MainTest {
 
 	public static void main(String[] args) {
 		assertNotNull(URL);
+		System.out.println("--GUI--");
 		UIUtils.openPage(URL);
+		System.out.println("--API--");
 		String response = APIUtils.sendGetRequest(URL + API_PATH);
 		assertNotNull(response);
 		System.out.println(response);

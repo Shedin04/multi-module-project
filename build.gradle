@@ -22,3 +22,12 @@ dependencies {
     implementation project(':gui-utils')
     implementation project(':api-utils')
 }
+
+task runmulti(type: JavaExec) {
+    doFirst() {
+        println "This is custom step for the main() method in $project.name\n"
+    }
+    group = "Execution"
+    classpath = sourceSets.test.runtimeClasspath
+    main = 'com.shedin.MainTest'
+}
