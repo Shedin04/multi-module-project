@@ -1,3 +1,5 @@
 rootProject.name = "multi-module-project"
 
 include 'api-utils', 'gui-utils'
+include 'saucedemo-ui-automation'
+
