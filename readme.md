@@ -1,5 +1,8 @@
 ****
-**Run:** .\gradlew.bat runmulti
+**Run:**
 
-.\gradlew.bat -DDEBUG=true gui-utils:runmulti
+.\gradlew.bat saucedemo-ui:runmulti
+
+.\gradlew.bat -DDEBUG=true saucedemo-ui:runmulti
+
 ****
