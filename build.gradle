@@ -2,7 +2,7 @@ allprojects {
     group 'com.shedin'
     version '1.0'
 
-    apply plugin: 'java'
+    apply plugin: 'java-library'
 
     repositories {
         mavenCentral()
@@ -31,9 +31,4 @@ allprojects {
         classpath = sourceSets.test.runtimeClasspath
         main = 'com.shedin.MainTest'
     }
-}
-
-dependencies {
-    implementation project(':gui-utils')
-    implementation project(':api-utils')
 }
