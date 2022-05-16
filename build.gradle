@@ -29,6 +29,6 @@ allprojects {
         }
         group = "Execution"
         classpath = sourceSets.test.runtimeClasspath
-        main = 'com.shedin.MainTest'
+        main = 'com.shedin.SmokeTest'
     }
 }
