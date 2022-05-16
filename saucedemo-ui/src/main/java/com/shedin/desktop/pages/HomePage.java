@@ -1,14 +1,33 @@
 package com.shedin.desktop.pages;
 
 import com.shedin.components.AbstractPage;
-import org.openqa.selenium.WebDriver;
+import com.shedin.desktop.fragments.LoginFragment;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Selenide.$;
 
 
 public class HomePage extends AbstractPage {
-	private final String pageURL = "https://www.saucedemo.com/";
+	private final String pagePath = "/";
 
-	public HomePage(WebDriver driver) {
-		super(driver);
-		setPageURL(pageURL);
+	private final By loginLogo = By.cssSelector(".login_logo");
+	private final By loginBox = By.cssSelector(".login-box");
+
+	private LoginFragment loginFragment;
+
+	public HomePage() {
+		setPagePath(pagePath);
+	}
+
+	public boolean isLogoDisplayed() {
+		return $(loginLogo).isDisplayed();
+	}
+
+	public LoginFragment getLoginFragment() {
+		if (loginFragment == null) {
+			loginFragment = new LoginFragment();
+			loginFragment.setRootElement($(loginBox));
+		}
+		return loginFragment;
 	}
 }
