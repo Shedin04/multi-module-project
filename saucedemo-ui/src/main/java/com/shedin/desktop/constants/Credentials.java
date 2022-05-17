@@ -1,6 +1,6 @@
 package com.shedin.desktop.constants;
 
-public interface Creds {
+public interface Credentials {
 
 	enum STANDARD_ACCOUNT {
 		LOGIN("standard_user"), PASSWORD("secret_sauce");

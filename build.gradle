@@ -18,7 +18,7 @@ allprojects {
 
     task runmulti(type: Test) {
         doFirst() {
-            println "This is custom step for the main() method in $project.name\n"
+            println "Running Smoke tests in $project.name\n"
         }
         if (System.getProperty('DEBUG', 'false') == 'true') {
             jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
