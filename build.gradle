@@ -14,19 +14,32 @@ allprojects {
         implementation 'org.apache.logging.log4j:log4j-core:2.17.2'
         compileOnly 'org.projectlombok:lombok:1.18.24'
         annotationProcessor 'org.projectlombok:lombok:1.18.24'
+        testImplementation 'io.cucumber:cucumber-java:7.3.4'
     }
+
+    configurations {
+        cucumberRuntime {
+            extendsFrom testImplementation
+        }
+    }
+
+    def tags = (findProperty('tags') == null) ? 'not @Ignore' : findProperty('tags') + ' and not @Ignore'
 
     task runmulti(type: Test) {
         doFirst() {
-            println "Running Smoke tests in $project.name\n"
+            println "Running tests for $project.name\n"
         }
-        if (System.getProperty('DEBUG', 'false') == 'true') {
-            jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
-        }
-        tasks.withType(Test) {
-            useJUnitPlatform()
-            testLogging {
-                events("passed", "skipped", "failed")
+        dependsOn assemble, testClasses
+        doLast {
+            javaexec {
+                main = "io.cucumber.core.cli.Main"
+                classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+                args = [
+                        '--plugin', 'pretty',
+                        '--plugin', 'html:report/cucumber-report.html',
+                        '--glue', 'com.shedin',
+                        '--tags', "${tags}",
+                        'src/test/resources/features']
             }
         }
     }
