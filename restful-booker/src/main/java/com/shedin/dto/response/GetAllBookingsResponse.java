@@ -11,6 +11,5 @@ import java.math.BigInteger;
 @Getter
 @NoArgsConstructor
 public class GetAllBookingsResponse {
-
 	private BigInteger bookingid;
 }

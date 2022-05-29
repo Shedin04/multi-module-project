@@ -1,4 +1,4 @@
-package com.shedin.dto.response;
+package com.shedin.dto.request;
 
 import com.shedin.dto.shared.BookingDates;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @Getter
 @NoArgsConstructor
-public class GetBookingResponse {
+public class CreateBookingRequest {
 	private String firstname;
 	private String lastname;
 	private BigDecimal totalprice;

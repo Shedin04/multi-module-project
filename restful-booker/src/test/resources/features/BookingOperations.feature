@@ -8,11 +8,17 @@ Feature: Booking operations
     Given the customer sends request to get all bookings
     Then total bookings size is more than 1000
 
-  Scenario Outline: Get specific booking
-    Given the customer sends request to get booking with <id> bookingid
-    Then the booking first name is <FirstName>
-    And the booking last name is <LastName>
-    And the booking price is <price>
-    Examples:
-      | id   | FirstName | LastName | price |
-      | 950  | Sally     | Brown    | 111   |
+  Scenario: Get specific booking
+    Given the customer sends request to get booking with 950 bookingid
+    Then the booking first name is Sally
+    And the booking last name is Brown
+    And the booking price is 111
+
+  Scenario: Create a new booking
+    Given the customer successfully creates default booking for person:
+      | firstName | Ivan   |
+      | lastName  | Petrov |
+    When the customer tries to get new-created bookingid
+    Then the booking first name is Ivan
+    And the booking last name is Petrov
+    And the booking price is 228

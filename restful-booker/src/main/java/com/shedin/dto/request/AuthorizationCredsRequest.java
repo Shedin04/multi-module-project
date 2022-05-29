@@ -9,7 +9,6 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 public class AuthorizationCredsRequest {
-
 	private String username;
 	private String password;
 }
