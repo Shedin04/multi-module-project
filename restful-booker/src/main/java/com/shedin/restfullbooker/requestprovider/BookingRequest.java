@@ -2,6 +2,7 @@ package com.shedin.restfullbooker.requestprovider;
 
 import com.shedin.restfullbooker.dto.request.CreateBookingRequest;
 import io.restassured.response.Response;
+import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 @Lazy
 @Component
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BookingRequest {
 
 	public static Response getAllBookings() {

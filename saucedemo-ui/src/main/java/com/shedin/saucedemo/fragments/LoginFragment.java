@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 
-@Component
 @Lazy
+@Component
 public class LoginFragment extends AbstractFragment {
 
 	private final By usernameInputForm = By.cssSelector("#user-name");

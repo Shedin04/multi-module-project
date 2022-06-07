@@ -11,9 +11,9 @@
     <context:component-scan base-package="com.shedin.restfullbooker.requestprovider"/>
 
     <!-- normal bean configured in xml -->
-    <bean id="configurationAPIHelper" class="com.shedin.apicore.utility.ConfigurationAPIHelper"/>
-    <bean id="jsonConverter" class="com.shedin.apicore.utility.JsonConverter"/>
-    <bean id="testContext" class="com.shedin.apicore.utility.TestContext"/>
+    <bean id="configurationAPIHelper" class="com.shedin.apicore.utility.ConfigurationAPIHelper" lazy-init="true"/>
+    <bean id="jsonConverter" class="com.shedin.apicore.utility.JsonConverter" lazy-init="true"/>
+    <bean id="testContext" class="com.shedin.apicore.utility.TestContext" lazy-init="true"/>
 
-    <bean id="configurationHelper" class="com.shedin.guicore.utility.ConfigurationHelper"/>
+    <bean id="configurationHelper" class="com.shedin.guicore.utility.ConfigurationHelper" lazy-init="true"/>
 </beans>

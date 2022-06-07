@@ -5,6 +5,7 @@ import com.shedin.restfullbooker.dto.request.AuthorizationCredsRequest;
 import com.shedin.restfullbooker.constants.Constants;
 import com.shedin.restfullbooker.constants.Endpoints;
 import io.restassured.response.Response;
+import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.http.HttpStatus;
 import org.springframework.context.annotation.Lazy;
@@ -17,7 +18,7 @@ import static com.shedin.apicore.utility.JsonConverter.getReader;
 
 @Lazy
 @Component
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TokenRequest {
 
 	public static Response getAuthorizationToken() {
