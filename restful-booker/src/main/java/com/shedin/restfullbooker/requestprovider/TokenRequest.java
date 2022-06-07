@@ -6,8 +6,8 @@ import com.shedin.restfullbooker.constants.Constants;
 import com.shedin.restfullbooker.constants.Endpoints;
 import io.restassured.response.Response;
 import lombok.NoArgsConstructor;
-import lombok.experimental.UtilityClass;
 import org.apache.http.HttpStatus;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import static com.shedin.apicore.request.BaseRequest.postRequest;
@@ -15,6 +15,7 @@ import static com.shedin.apicore.utility.ConfigurationAPIHelper.getBaseURL;
 import static com.shedin.apicore.utility.JsonConverter.getReader;
 
 
+@Lazy
 @Component
 @NoArgsConstructor
 public class TokenRequest {

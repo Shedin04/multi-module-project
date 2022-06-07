@@ -3,7 +3,7 @@ package com.shedin.restfullbooker.requestprovider;
 import com.shedin.restfullbooker.dto.request.CreateBookingRequest;
 import io.restassured.response.Response;
 import lombok.NoArgsConstructor;
-import lombok.experimental.UtilityClass;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import static com.shedin.restfullbooker.constants.Endpoints.BOOKING;
@@ -14,6 +14,7 @@ import static com.shedin.apicore.utility.TestContext.getToken;
 import static org.apache.http.HttpStatus.SC_OK;
 
 
+@Lazy
 @Component
 @NoArgsConstructor
 public class BookingRequest {

@@ -5,10 +5,12 @@ import com.shedin.guicore.components.AbstractPage;
 import com.shedin.saucedemo.pages.HomePage;
 import com.shedin.saucedemo.pages.ProductsPage;
 import org.openqa.selenium.By;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 
 @Component
+@Lazy
 public class LoginFragment extends AbstractFragment {
 
 	private final By usernameInputForm = By.cssSelector("#user-name");
