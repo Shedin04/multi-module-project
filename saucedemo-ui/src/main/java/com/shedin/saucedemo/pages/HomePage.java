@@ -2,6 +2,7 @@ package com.shedin.saucedemo.pages;
 
 import com.shedin.guicore.components.AbstractPage;
 import com.shedin.saucedemo.fragments.LoginFragment;
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -15,8 +16,8 @@ import static com.shedin.saucedemo.constants.PagePaths.HOME_PAGE_PATH;
 @Component
 public class HomePage extends AbstractPage {
 	private final By loginLogo = By.cssSelector(".login_logo");
-	private final By loginBox = By.cssSelector(".login-box");
 
+	@Autowired @Getter
 	private LoginFragment loginFragment;
 
 	public HomePage() {
@@ -25,14 +26,5 @@ public class HomePage extends AbstractPage {
 
 	public boolean isLogoDisplayed() {
 		return $(loginLogo).isDisplayed();
-	}
-
-	@Autowired
-	public LoginFragment getLoginFragment() {
-		if (loginFragment == null) {
-			loginFragment = new LoginFragment();
-			loginFragment.setRootElement($(loginBox));
-		}
-		return loginFragment;
 	}
 }
