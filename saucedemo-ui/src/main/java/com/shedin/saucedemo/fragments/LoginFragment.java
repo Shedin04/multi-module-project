@@ -17,7 +17,7 @@ public class LoginFragment extends AbstractFragment {
 	private final By passwordInputForm = By.cssSelector("#password");
 	private final By loginButton = By.cssSelector("#login-button");
 
-	protected LoginFragment() {
+	public LoginFragment() {
 		setRootElementLocator(loginBox);
 	}
 
