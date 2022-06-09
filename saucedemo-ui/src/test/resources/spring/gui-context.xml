@@ -6,14 +6,7 @@
 
     <!-- Annotated beans base package location to get it instantiated
          at the time of spring context startup -->
-    <context:component-scan base-package="com.shedin.saucedemo.pages"/>
-    <context:component-scan base-package="com.shedin.saucedemo.fragments"/>
-    <context:component-scan base-package="com.shedin.restfullbooker.requestprovider"/>
-
-    <!-- normal bean configured in xml -->
-    <bean id="configurationAPIHelper" class="com.shedin.apicore.utility.ConfigurationAPIHelper" lazy-init="true"/>
-    <bean id="jsonConverter" class="com.shedin.apicore.utility.JsonConverter" lazy-init="true"/>
-    <bean id="testContext" class="com.shedin.apicore.utility.TestContext" lazy-init="true"/>
+    <context:component-scan base-package="com.shedin.saucedemo"/>
 
     <bean id="configurationHelper" class="com.shedin.guicore.utility.ConfigurationHelper" lazy-init="true"/>
 </beans>

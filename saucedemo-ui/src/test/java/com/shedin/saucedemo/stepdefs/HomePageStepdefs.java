@@ -4,6 +4,7 @@ import com.shedin.saucedemo.pages.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static com.shedin.guicore.constants.StringConstants.IS;
 import static java.lang.String.format;
@@ -12,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class HomePageStepdefs {
-	private final HomePage homePage = new HomePage();
+	@Autowired
+	private HomePage homePage;
 
 	@Given("^the customer opens the 'Home' page$|^the guest opens the 'Home' page$")
 	public void the_customer_opens_the_home_page() {

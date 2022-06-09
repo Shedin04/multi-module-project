@@ -5,6 +5,7 @@ import com.shedin.guicore.components.AbstractPage;
 import com.shedin.saucedemo.pages.HomePage;
 import com.shedin.saucedemo.pages.ProductsPage;
 import org.openqa.selenium.By;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,12 @@ public class LoginFragment extends AbstractFragment {
 	private final By usernameInputForm = By.cssSelector("#user-name");
 	private final By passwordInputForm = By.cssSelector("#password");
 	private final By loginButton = By.cssSelector("#login-button");
+
+	@Autowired
+	private HomePage homePage;
+
+	@Autowired
+	private ProductsPage productsPage;
 
 	public LoginFragment() {
 		setRootElementLocator(loginBox);
@@ -34,8 +41,8 @@ public class LoginFragment extends AbstractFragment {
 	public AbstractPage clickLoginButton() {
 		getRootElement().$(loginButton).click();
 		if (isAlertDisplayed()) {
-			return new HomePage();
+			return homePage;
 		}
-		return new ProductsPage();
+		return productsPage;
 	}
 }

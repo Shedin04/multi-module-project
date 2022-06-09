@@ -3,9 +3,11 @@ package com.shedin.restfullbooker.stepdefs;
 import com.shedin.restfullbooker.dto.response.GetBookingResponse;
 import com.shedin.apicore.utility.TestContext;
 import io.cucumber.java.en.And;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 
+import static com.shedin.apicore.utility.TestContext.getSharedParameter;
 import static com.shedin.restfullbooker.constants.Constants.BOOKING_RESPONSE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,17 +16,17 @@ public class BookingResponseStepdefs {
 
 	@And("^the booking first name is (.*)$")
 	public void the_booking_first_name_is(String expectedFirstName) {
-		assertEquals(expectedFirstName, ((GetBookingResponse) TestContext.getSharedParameter(BOOKING_RESPONSE)).getFirstname());
+		assertEquals(expectedFirstName, ((GetBookingResponse) getSharedParameter(BOOKING_RESPONSE)).getFirstname());
 	}
 
 	@And("^the booking last name is (.*)$")
 	public void the_booking_last_name_is(String expectedLastName) {
-		assertEquals(expectedLastName, ((GetBookingResponse) TestContext.getSharedParameter(BOOKING_RESPONSE)).getLastname());
+		assertEquals(expectedLastName, ((GetBookingResponse) getSharedParameter(BOOKING_RESPONSE)).getLastname());
 	}
 
 	@And("^the booking price is (.*)$")
 	public void the_booking_price_is(BigDecimal expectedPrice) {
 		assertEquals(expectedPrice,
-					 ((GetBookingResponse) TestContext.getSharedParameter(BOOKING_RESPONSE)).getTotalprice());
+					 ((GetBookingResponse) getSharedParameter(BOOKING_RESPONSE)).getTotalprice());
 	}
 }

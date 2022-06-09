@@ -9,7 +9,7 @@ Feature: Booking operations
     Then total bookings size is more than 1000
 
   Scenario: Get specific booking
-    Given the customer sends request to get booking with 950 bookingid
+    Given the customer sends request to get booking with 1000 bookingid
     Then the booking first name is Sally
     And the booking last name is Brown
     And the booking price is 111

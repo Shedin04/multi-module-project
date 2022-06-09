@@ -16,11 +16,13 @@ allprojects {
         annotationProcessor 'org.projectlombok:lombok:1.18.24'
         testImplementation 'io.cucumber:cucumber-java:7.3.4'
         api 'org.springframework:spring-core:5.3.20'
-//        api 'org.springframework:spring-context:5.3.9'
-//        api 'org.springframework:spring-web:5.3.9'
-//        api 'org.springframework:spring-beans:5.3.9'
-//        api 'org.springframework:spring-test:5.3.9'
+        api 'org.springframework:spring-context:5.3.9'
+        api 'org.springframework:spring-web:5.3.9'
+        api 'org.springframework:spring-beans:5.3.9'
+        api 'org.springframework:spring-test:5.3.9'
         api 'org.springframework.boot:spring-boot:2.6.7'
+        api 'org.springframework.boot:spring-boot-test:2.6.7'
+        api 'io.cucumber:cucumber-spring:7.3.3'
     }
 
     configurations {
