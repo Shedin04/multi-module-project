@@ -4,12 +4,13 @@ Feature: Booking operations
   I WANT TO get and create the bookings.
   SO THAT I can do it.
 
+  @Smoke
   Scenario: Get all bookings
     Given the customer sends request to get all bookings
     Then total bookings size is more than 51
 
   Scenario: Get specific booking
-    Given the customer sends request to get booking with 52 bookingid
+    Given the customer sends request to get booking with 29 bookingid
     Then the booking first name is Sally
     And the booking last name is Brown
     And the booking price is 111
