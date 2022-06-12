@@ -1,13 +1,4 @@
-plugins {
-    id 'java-library'
-    id 'maven-publish'
-}
-
 subprojects {
-    group 'com.shedin'
-    version '1.0'
-
-    apply plugin: 'java'
     apply plugin: 'java-library'
 
     repositories {
@@ -41,6 +32,9 @@ subprojects {
         dependsOn assemble, testClasses
         doLast {
             javaexec {
+                if (System.getProperty('DEBUG', 'false') == 'true') {
+                    jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
+                }
                 main = "io.cucumber.core.cli.Main"
                 classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
                 args = [
