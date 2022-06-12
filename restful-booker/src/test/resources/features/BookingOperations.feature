@@ -6,10 +6,10 @@ Feature: Booking operations
 
   Scenario: Get all bookings
     Given the customer sends request to get all bookings
-    Then total bookings size is more than 1000
+    Then total bookings size is more than 51
 
   Scenario: Get specific booking
-    Given the customer sends request to get booking with 1000 bookingid
+    Given the customer sends request to get booking with 52 bookingid
     Then the booking first name is Sally
     And the booking last name is Brown
     And the booking price is 111
