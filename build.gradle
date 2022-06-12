@@ -32,7 +32,7 @@ subprojects {
         dependsOn assemble, testClasses
         doLast {
             javaexec {
-                if (System.getProperty('DEBUG', 'false') == 'true') {
+                if (System.getProperty('debug', 'false') == 'true') {
                     jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
                 }
                 main = "io.cucumber.core.cli.Main"
