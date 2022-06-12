@@ -1,7 +1,13 @@
-allprojects {
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+subprojects {
     group 'com.shedin'
     version '1.0'
 
+    apply plugin: 'java'
     apply plugin: 'java-library'
 
     repositories {

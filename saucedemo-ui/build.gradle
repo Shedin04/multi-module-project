@@ -1,3 +1,11 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group 'com.shedin'
+version '1.0'
+
 dependencies {
     api project(':gui-utils')
 }
