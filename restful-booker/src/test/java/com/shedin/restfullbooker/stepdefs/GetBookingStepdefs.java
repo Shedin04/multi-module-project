@@ -3,7 +3,6 @@ package com.shedin.restfullbooker.stepdefs;
 import com.shedin.restfullbooker.dto.response.CreateBookingResponse;
 import com.shedin.restfullbooker.dto.response.GetAllBookingsResponse;
 import com.shedin.restfullbooker.dto.response.GetBookingResponse;
-import com.shedin.apicore.utility.TestContext;
 import com.shedin.restfullbooker.requestprovider.BookingRequest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

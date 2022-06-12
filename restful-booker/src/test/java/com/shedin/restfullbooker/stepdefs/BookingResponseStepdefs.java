@@ -1,9 +1,7 @@
 package com.shedin.restfullbooker.stepdefs;
 
 import com.shedin.restfullbooker.dto.response.GetBookingResponse;
-import com.shedin.apicore.utility.TestContext;
 import io.cucumber.java.en.And;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 

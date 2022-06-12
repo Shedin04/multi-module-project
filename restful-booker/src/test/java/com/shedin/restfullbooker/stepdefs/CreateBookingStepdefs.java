@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.shedin.apicore.utility.JsonConverter;
 import com.shedin.restfullbooker.dto.request.CreateBookingRequest;
 import com.shedin.restfullbooker.dto.response.CreateBookingResponse;
-import com.shedin.apicore.utility.TestContext;
 import com.shedin.restfullbooker.requestprovider.BookingRequest;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;

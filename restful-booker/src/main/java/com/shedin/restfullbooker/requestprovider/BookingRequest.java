@@ -3,6 +3,7 @@ package com.shedin.restfullbooker.requestprovider;
 import com.shedin.apicore.utility.ConfigurationAPIHelper;
 import com.shedin.restfullbooker.dto.request.CreateBookingRequest;
 import io.restassured.response.Response;
+import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -17,7 +18,7 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 @Lazy
 @Component
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BookingRequest {
 	@Autowired
 	private ConfigurationAPIHelper configurationAPIHelper;

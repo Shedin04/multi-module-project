@@ -1,13 +1,13 @@
 package com.shedin.restfullbooker.requestprovider;
 
 import com.google.gson.Gson;
-import com.shedin.apicore.request.BaseRequest;
 import com.shedin.apicore.utility.ConfigurationAPIHelper;
 import com.shedin.apicore.utility.JsonConverter;
 import com.shedin.restfullbooker.dto.request.AuthorizationCredsRequest;
 import com.shedin.restfullbooker.constants.Constants;
 import com.shedin.restfullbooker.constants.Endpoints;
 import io.restassured.response.Response;
+import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import static com.shedin.apicore.request.BaseRequest.postRequest;
 
 @Lazy
 @Component
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TokenRequest {
 	@Autowired
 	private ConfigurationAPIHelper configurationAPIHelper;
