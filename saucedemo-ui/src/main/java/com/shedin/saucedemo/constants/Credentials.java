@@ -1,4 +1,4 @@
-package com.shedin.desktop.constants;
+package com.shedin.saucedemo.constants;
 
 public interface Credentials {
 
