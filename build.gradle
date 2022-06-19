@@ -25,6 +25,8 @@ subprojects {
 
     def tags = (findProperty('tags') == null) ? 'not @Ignore' : findProperty('tags') + ' and not @Ignore'
 
+    def threads = (findProperty('threads') == null) ? '1' : findProperty('threads')
+
     task runmulti(type: Test) {
         doFirst() {
             println "Running tests for $project.name\n"
@@ -39,9 +41,11 @@ subprojects {
                 classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
                 args = [
                         '--plugin', 'pretty',
+                        '--plugin', 'timeline:report/threads',
                         '--plugin', 'html:report/cucumber-report.html',
                         '--glue', 'com.shedin',
                         '--tags', "${tags}",
+                        '--threads', "${threads}",
                         'src/test/resources/features']
             }
         }
