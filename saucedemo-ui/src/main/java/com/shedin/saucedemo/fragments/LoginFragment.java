@@ -1,6 +1,5 @@
 package com.shedin.saucedemo.fragments;
 
-import com.shedin.guicore.components.AbstractFragment;
 import com.shedin.guicore.components.AbstractPage;
 import com.shedin.saucedemo.pages.HomePage;
 import com.shedin.saucedemo.pages.ProductsPage;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Lazy
 @Component
-public class LoginFragment extends AbstractFragment {
+public class LoginFragment extends AbstractSaucedemoFragment {
 	private final By rootElementLocator = By.cssSelector(".login-box");
 	private final By usernameInputForm = By.cssSelector("#user-name");
 	private final By passwordInputForm = By.cssSelector("#password");
