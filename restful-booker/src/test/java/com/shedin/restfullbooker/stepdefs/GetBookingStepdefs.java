@@ -16,9 +16,9 @@ import java.util.List;
 
 import static com.shedin.apicore.utility.TestContext.getSharedParameter;
 import static com.shedin.apicore.utility.TestContext.saveSharedParameter;
-import static com.shedin.restfullbooker.constants.Constants.ALL_BOOKINGS_RESPONSE;
-import static com.shedin.restfullbooker.constants.Constants.BOOKING_RESPONSE;
-import static com.shedin.restfullbooker.constants.Constants.NEW_BOOKING;
+import static com.shedin.restfullbooker.constants.Constants.Values.ALL_BOOKINGS_RESPONSE;
+import static com.shedin.restfullbooker.constants.Constants.Values.BOOKING_RESPONSE;
+import static com.shedin.restfullbooker.constants.Constants.Values.NEW_BOOKING;
 import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

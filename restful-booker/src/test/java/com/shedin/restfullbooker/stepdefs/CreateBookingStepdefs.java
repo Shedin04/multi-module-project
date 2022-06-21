@@ -11,10 +11,10 @@ import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static com.shedin.apicore.utility.TestContext.saveSharedParameter;
-import static com.shedin.restfullbooker.constants.Constants.CREATE_BOOKING_FILE;
-import static com.shedin.restfullbooker.constants.Constants.FIRST_NAME;
-import static com.shedin.restfullbooker.constants.Constants.LAST_NAME;
-import static com.shedin.restfullbooker.constants.Constants.NEW_BOOKING;
+import static com.shedin.restfullbooker.constants.Constants.JsonFiles.CREATE_BOOKING_FILE;
+import static com.shedin.restfullbooker.constants.Constants.RegularData.FIRST_NAME;
+import static com.shedin.restfullbooker.constants.Constants.RegularData.LAST_NAME;
+import static com.shedin.restfullbooker.constants.Constants.Values.NEW_BOOKING;
 
 
 public class CreateBookingStepdefs {

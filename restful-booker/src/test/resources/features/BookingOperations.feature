@@ -11,9 +11,9 @@ Feature: Booking operations
 
   Scenario: Get specific booking
     Given the customer sends request to get booking with 29 bookingid
-    Then the booking first name is Taylor
-    And the booking last name is Thompson
-    And the booking price is 169
+    Then the booking first name is Jim
+    And the booking last name is Brown
+    And the booking price is 111
 
   Scenario: Create a new booking
     Given the customer successfully creates default booking for person:
