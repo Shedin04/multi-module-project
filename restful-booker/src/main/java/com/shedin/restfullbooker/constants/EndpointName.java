@@ -1,6 +1,6 @@
 package com.shedin.restfullbooker.constants;
 
-public interface Endpoints {
+public interface EndpointName {
 	String AUTHENTICATION = "authentication";
 	String BOOKING = "booking";
 }
