@@ -1,6 +1,5 @@
 package com.shedin.restfullbooker.stepdefs;
 
-import com.google.gson.Gson;
 import com.shedin.apicore.utility.JsonConverter;
 import com.shedin.restfullbooker.dto.request.CreateBookingRequest;
 import com.shedin.restfullbooker.dto.response.CreateBookingResponse;
@@ -26,8 +25,8 @@ public class CreateBookingStepdefs {
 
 	@Given("^the customer successfully creates default booking for person:$")
 	public void the_customer_successfully_creates_default_booking_for_the_person(DataTable dataTable) {
-		CreateBookingRequest createBookingRequest = new Gson().fromJson(
-				jsonConverter.getReader(CREATE_BOOKING_FILE), CreateBookingRequest.class);
+		CreateBookingRequest createBookingRequest = (CreateBookingRequest) jsonConverter
+				.convertJsonToObject(CREATE_BOOKING_FILE, CreateBookingRequest.class);
 		createBookingRequest.setFirstname(dataTable.asMap().get(FIRST_NAME));
 		createBookingRequest.setLastname(dataTable.asMap().get(LAST_NAME));
 		Response response = bookingRequest.createNewBooking(createBookingRequest);

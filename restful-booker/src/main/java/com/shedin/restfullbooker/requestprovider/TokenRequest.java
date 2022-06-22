@@ -29,8 +29,8 @@ public class TokenRequest {
 	private JsonConverter jsonConverter;
 
 	public Response getAuthorizationToken() {
-		AuthorizationCredsRequest authorizationCredsDto = new Gson().fromJson(
-				jsonConverter.getReader(USER_CREDS_FILE), AuthorizationCredsRequest.class);
+		AuthorizationCredsRequest authorizationCredsDto = (AuthorizationCredsRequest) jsonConverter.convertJsonToObject(
+				USER_CREDS_FILE, AuthorizationCredsRequest.class);
 		return postRequest(configurationAPIHelper.getBaseURL() + endpointsHelper.getAuthenticationUrl(), HttpStatus.SC_OK,
 						   authorizationCredsDto);
 	}

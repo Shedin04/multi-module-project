@@ -10,10 +10,10 @@ Feature: Booking operations
     Then total bookings size is more than 51
 
   Scenario: Get specific booking
-    Given the customer sends request to get booking with 29 bookingid
-    Then the booking first name is Jim
-    And the booking last name is Brown
-    And the booking price is 111
+    Given the customer sends request to get booking with 612 bookingid
+    Then the booking first name is Leslie
+    And the booking last name is Kelly
+    And the booking price is 362
 
   Scenario: Create a new booking
     Given the customer successfully creates default booking for person:
