@@ -1,6 +1,5 @@
 package com.shedin.restfullbooker.requestprovider;
 
-import com.google.gson.Gson;
 import com.shedin.apicore.helpers.ConfigurationAPIHelper;
 import com.shedin.apicore.utility.JsonConverter;
 import com.shedin.restfullbooker.dto.request.AuthorizationCredsRequest;
