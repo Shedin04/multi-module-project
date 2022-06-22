@@ -4,8 +4,8 @@ import com.shedin.guicore.driver.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
+import static com.shedin.saucedemo.helpers.ScenarioHelper.checkScenario;
 
 
 public class GlobalStepdefs {
@@ -19,12 +19,5 @@ public class GlobalStepdefs {
 	public void closeDriver(Scenario scenario) {
 		checkScenario(scenario);
 		DriverManager.closeDriver();
-	}
-
-	public void checkScenario(Scenario scenario) {
-		if (scenario.isFailed()) {
-			byte[] data = ((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(data, "image/png", scenario.getId() + "-screen");
-		}
 	}
 }
