@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import java.math.BigDecimal;
 
 import static com.shedin.apicore.utility.TestContext.getSharedParameter;
-import static com.shedin.restfullbooker.constants.Constants.BOOKING_RESPONSE;
+import static com.shedin.restfullbooker.constants.Constants.Values.BOOKING_RESPONSE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 

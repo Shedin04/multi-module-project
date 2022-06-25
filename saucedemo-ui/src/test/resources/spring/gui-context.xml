@@ -8,5 +8,5 @@
          at the time of spring context startup -->
     <context:component-scan base-package="com.shedin.saucedemo"/>
 
-    <bean id="configurationHelper" class="com.shedin.guicore.utility.ConfigurationHelper" lazy-init="true"/>
+    <bean id="configurationHelper" class="com.shedin.guicore.utility.ConfigurationService" lazy-init="true"/>
 </beans>
