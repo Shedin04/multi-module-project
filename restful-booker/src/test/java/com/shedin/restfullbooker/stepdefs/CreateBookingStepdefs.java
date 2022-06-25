@@ -29,6 +29,6 @@ public class CreateBookingStepdefs {
 		createBookingRequest.setFirstname(dataTable.asMap().get(FIRST_NAME));
 		createBookingRequest.setLastname(dataTable.asMap().get(LAST_NAME));
 		Response response = bookingRequest.createNewBooking(createBookingRequest);
-		assertEquals(response.getStatusCode(), HttpStatus.SC_OK, "Incorrect status code");
+		assertEquals(HttpStatus.SC_OK, response.getStatusCode(), "Incorrect status code");
 	}
 }

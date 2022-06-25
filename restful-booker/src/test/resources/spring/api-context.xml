@@ -10,8 +10,8 @@
     <context:component-scan base-package="com.shedin.restfullbooker.helpers"/>
 
     <!-- normal bean configured in xml -->
-    <bean id="configurationAPIHelper" class="com.shedin.apicore.helpers.ConfigurationAPIHelper" lazy-init="true"/>
-    <bean id="configurationAPIService" class="com.shedin.apicore.utility.ConfigurationAPIService" lazy-init="true"/>
+    <bean id="configurationAPIHelper" class="com.shedin.apicore.helpers.ConfigurationApiHelper" lazy-init="true"/>
+    <bean id="configurationAPIService" class="com.shedin.apicore.utility.ConfigurationApiService" lazy-init="true"/>
     <bean id="jsonConverter" class="com.shedin.apicore.utility.JsonConverter" lazy-init="true"/>
     <bean id="testContext" class="com.shedin.apicore.utility.TestContext" lazy-init="true"/>
 </beans>

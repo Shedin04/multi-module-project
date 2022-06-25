@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class AuthorizationCredsRequest {
+public class AuthorizationCredentialsRequest {
 	private String username;
 	private String password;
 }
