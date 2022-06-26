@@ -32,7 +32,7 @@ public class TokenRequest {
 	}
 
 	public Response createAuthorizationToken() {
-		AuthorizationCredentialsRequest authorizationCredentialsDto = (AuthorizationCredentialsRequest) jsonConverter.convertJsonToObject(
+		AuthorizationCredentialsRequest authorizationCredentialsDto = (AuthorizationCredentialsRequest) jsonConverter.convertJsonFileToObject(
 				USER_CREDENTIALS_FILE, AuthorizationCredentialsRequest.class);
 		Response response = postRequest(configurationAPIHelper.getBaseURL() + endpointsHelper.getAuthenticationUrl(),
 										authorizationCredentialsDto);
