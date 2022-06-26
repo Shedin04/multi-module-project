@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class AuthorizationCredsResponse {
+public class AuthorizationCredentialsResponse {
 	private String token;
 }

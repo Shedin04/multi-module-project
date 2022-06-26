@@ -7,13 +7,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 public class AbstractSaucedemoFragment extends AbstractFragment {
-	private final By alert = By.cssSelector(".error-message-container.error");
+	private final By alertLocator = By.cssSelector(".error-message-container.error");
 
 	public boolean isAlertDisplayed() {
-		return $(alert).isDisplayed();
+		return $(alertLocator).isDisplayed();
 	}
 
 	public String getAlertMessage() {
-		return $(alert).getText();
+		return $(alertLocator).getText();
 	}
 }

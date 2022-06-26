@@ -1,6 +1,5 @@
 package com.shedin.saucedemo.pages;
 
-import com.shedin.guicore.utility.ConfigurationHelper;
 import com.shedin.saucedemo.fragments.LoginFragment;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -21,7 +20,7 @@ public class HomePage extends AbstractSaucedemoPage {
 	private LoginFragment loginFragment;
 
 	public HomePage() {
-		setPagePath(ConfigurationHelper.getPagePath(getPageName()));
+		setPagePath();
 	}
 
 	public boolean isLogoDisplayed() {

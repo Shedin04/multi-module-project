@@ -1,12 +1,15 @@
 package com.shedin.restfullbooker.stepdefs;
 
-import com.shedin.restfullbooker.dto.response.AuthorizationCredsResponse;
 import com.shedin.restfullbooker.requestprovider.TokenRequest;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.restassured.response.Response;
+import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static com.shedin.apicore.constants.StringConstants.RequestParameters.TOKEN;
-import static com.shedin.apicore.utility.TestContext.saveSharedParameter;
+
+import static com.shedin.apicore.utility.TestContext.unloadTestData;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class ScenarioHooks {
@@ -14,8 +17,13 @@ public class ScenarioHooks {
 	private TokenRequest tokenRequest;
 
 	@Before(value = "@GetToken", order = 1)
-	public void getToken() {
-		saveSharedParameter(TOKEN,
-							tokenRequest.getAuthorizationToken().as(AuthorizationCredsResponse.class).getToken());
+	public void createToken() {
+		Response response = tokenRequest.createAuthorizationToken();
+		assertEquals(HttpStatus.SC_OK, response.getStatusCode(), "Token wasn't created");
+	}
+
+	@After(order = 1)
+	public void clearTestData() {
+		unloadTestData();
 	}
 }

@@ -1,6 +1,6 @@
 package com.shedin.restfullbooker.requestprovider;
 
-import com.shedin.apicore.helpers.ConfigurationAPIHelper;
+import com.shedin.apicore.helpers.ConfigurationApiHelper;
 import com.shedin.restfullbooker.dto.request.CreateBookingRequest;
 import com.shedin.restfullbooker.dto.response.CreateBookingResponse;
 import com.shedin.restfullbooker.dto.response.GetAllBookingsResponse;
@@ -8,8 +8,6 @@ import com.shedin.restfullbooker.dto.response.GetBookingResponse;
 import com.shedin.restfullbooker.helpers.EndpointsHelper;
 import com.shedin.restfullbooker.helpers.RequestHelper;
 import io.restassured.response.Response;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -26,14 +24,17 @@ import static com.shedin.restfullbooker.constants.Constants.Values.NEW_BOOKING;
 
 @Lazy
 @Component
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BookingRequest {
+	private final RequestHelper helper;
+	private final EndpointsHelper endpointsHelper;
+	private final ConfigurationApiHelper configurationAPIHelper;
+
 	@Autowired
-	private RequestHelper helper;
-	@Autowired
-	private EndpointsHelper endpointsHelper;
-	@Autowired
-	private ConfigurationAPIHelper configurationAPIHelper;
+	private BookingRequest(RequestHelper helper, EndpointsHelper endpointsHelper, ConfigurationApiHelper configurationAPIHelper) {
+		this.helper = helper;
+		this.endpointsHelper = endpointsHelper;
+		this.configurationAPIHelper = configurationAPIHelper;
+	}
 
 	public Response getAllBookings() {
 		Response response = getRequest(configurationAPIHelper.getBaseURL() + endpointsHelper.getBookingURL(),
