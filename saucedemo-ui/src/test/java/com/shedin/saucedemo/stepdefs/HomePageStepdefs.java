@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static com.shedin.guicore.constants.StringConstants.BasicOperators.IS;
 import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class HomePageStepdefs {
@@ -45,7 +44,6 @@ public class HomePageStepdefs {
 
 	@And("^the '(.*)' alert message is displayed$")
 	public void the_alert_message_is_displayed(String expectedMessage) {
-		assertTrue(homePage.getLoginFragment().isAlertDisplayed(), "There is no alert message");
 		assertEquals(expectedMessage, homePage.getLoginFragment().getAlertMessage(), "Invalid alert message");
 	}
 }

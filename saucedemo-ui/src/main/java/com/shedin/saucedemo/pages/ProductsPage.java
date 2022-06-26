@@ -1,6 +1,5 @@
 package com.shedin.saucedemo.pages;
 
-import com.shedin.guicore.utility.ConfigurationHelper;
 import org.openqa.selenium.By;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -14,7 +13,7 @@ public class ProductsPage extends AbstractSaucedemoPage {
 	private final By productsContainer = By.cssSelector("#inventory_container");
 
 	public ProductsPage() {
-		setPagePath(ConfigurationHelper.getPagePath(getPageName()));
+		setPagePath();
 	}
 
 	public boolean isProductsContainerDisplayed() {
