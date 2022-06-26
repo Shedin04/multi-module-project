@@ -33,8 +33,7 @@ public class HomePageStepdefs {
 
 	@When("^the customer inputs '(.*)' and '(.*)' in the login input form$")
 	public void the_customer_inputs_login_and_password_in_the_login_input_form(String login, String password) {
-		homePage.getLoginFragment().inputUsername(login);
-		homePage.getLoginFragment().inputPassword(password);
+		homePage.getLoginFragment().inputUsername(login).inputPassword(password);
 	}
 
 	@And("^the customer clicks the 'login' button$")
